@@ -6,3 +6,37 @@
      font-family: 'Raleway', sans-serif;
 }
    
+
+.brand-txt-col {
+     color: #715092;
+
+}
+.bg-newsfeed{
+     background-color: #715092;
+     color: white;
+     padding: 10px;
+     border-radius: 5px;
+     margin-bottom: 20px;
+}
+
+#brand-btns{
+     background-color: #715092;
+     color: black;
+     border-radius: 15px;
+     border: none;
+     color: white;
+     cursor: pointer;
+}
+
+#brand-btns:hover{
+     background-color: rgb(119, 115, 115);
+     color: black;
+     border: #715092 2px solid;
+     border-radius: 15px;
+}
+
+#hero-img{
+     object-fit: cover;
+     border: #715092 2px solid;
+}
+

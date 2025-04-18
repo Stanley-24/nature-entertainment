@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>April Event</title>
+    <title>Nature Entertainment</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -26,7 +26,7 @@
     >
       <div class="logo me-5 m-2 align-items-center d-flex">
         <img src="images/logo.png" alt="Logo" class="img-fluid" />
-        <h2>text</h2>
+        <h2 class="text-uppercase">Nature Entertainment</h2>
       </div>
       <nav class="ms-5">
         <ul class="nav">
@@ -47,8 +47,41 @@
 
     <!-- Main content -->
     <main class="container p-5">
-      <section class="Hero">
-        <h1 class="raleway">wwww</h1>
+      <section class="Hero py-5 bg-light">
+       <div class="row align-items-center">
+
+        <!-- Left column with two stacks-->
+         <div class="col-lg-6 d-flex flex-column justify-content-between gap-4">
+
+          <!-- 📌 TOP STACK: Headings + CTA -->
+          <div>
+            <h4 class="text-uppercase fw-bold brand-txt-col">Day Vibes. Nature Style.</h4>
+            <h3 class="display-5 fw-bold">Nature Entertainment Presents</h3>
+            <p class="text-muted">
+              We’re flipping the script on day parties, proving that epic vibes can happen <blockquote>
+                Tix to our next party ⬇️⬇️
+              </blockquote>
+            </p>
+            <button type="button" class="btn btn-primary btn-lg" id="brand-btns">
+              GET TICKETS
+            </button>
+          </div>
+
+          <!-- 📩 BOTTOM STACK: Newsletter Form -->
+         <div class="bg-newsfeed p-4 rounded shadow-sm">
+          <h5 class="mb-2">Get all the latest gist from us ... 🎶</h5>
+
+          <form action="#" method="POST" class="d-flex flex-column flex-sm-row gap-2">
+            <input type="email" class="form-control" placeholder="Enter your email" required />
+            <button type="submit" class="btn btn-dark">Subscribe</button>
+          </form>
+         </div>
+         </div>
+          <!-- Right column with image -->
+          <div class="col-lg-6 text-center mt-4 mt-lg-0">
+            <img src="/April/assets/images/logo-03.jpg" class="img-fluid rounded" id="hero-img" alt="Brand design flyer for homepage" />
+          </div>
+       </div>
       </section>
 
       <section class="upcoming-event"></section>
