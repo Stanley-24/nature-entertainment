@@ -22,6 +22,7 @@
  
  .brand-txt-col {
      color: #FF4EDB;
+     
  }
  
  .bg-newsfeed {
@@ -45,7 +46,7 @@
 
  #brand-btns {
      background-color: #715092;
-     color: #FF4EDB;
+     color: #fff;
      border-radius: 15px;
      border: none;
      cursor: pointer;
@@ -96,7 +97,7 @@
      background-color: #715092;
      border-radius: 25px;
      padding: 10px 30px;
-     color: #FF4EDB;
+     color: #fff;
    }
    
    .btn-primary:hover {
