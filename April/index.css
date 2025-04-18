@@ -1,42 +1,171 @@
-  
- *{
+* {
      font-family: "Raleway", sans-serif;
-}
-.raleway {
-     font-family: 'Raleway', sans-serif;
-}
-   
-
-.brand-txt-col {
+ }
+ 
+ 
+ .logo {
+     display: flex;
+     align-items: center;
+     gap: 10px;
+     color: #6C63FF;
+ }
+ 
+ .logo-img {
+     max-height: 50px;
+     object-fit: contain;
+     transition: transform 0.3s ease;
+ }
+ 
+ .logo-text {
+     font-size: 2rem;
+     font-weight: 700;
+     color: #333;
+     letter-spacing: 2px;
+ }
+ 
+ .logo:hover .logo-img {
+     transform: scale(1.1);
+ }
+ 
+ @media (max-width: 768px) {
+     .logo-img {
+         max-height: 40px;
+     }
+ 
+     .logo-text {
+         font-size: 1.5rem;
+     }
+ }
+ 
+ nav ul {
+     list-style: none;
+     display: flex;
+     gap: 20px;
+ }
+ 
+ .nav-item {
+     margin-right: 20px;
+ }
+ 
+ .nav-link {
+     color: #333;
+     font-size: 1rem;
+     font-weight: 600;
+     text-transform: uppercase;
+     transition: color 0.3s ease;
+ }
+ 
+ .nav-link:hover {
+     color: #6C63FF;
+ }
+ 
+ .nav-link.active {
+     color: #6C63FF;
+ }
+ 
+ @media (max-width: 768px) {
+     nav ul {
+         flex-direction: column;
+         align-items: center;
+     }
+ 
+     .nav-link {
+         font-size: 1.1rem;
+         text-align: center;
+     }
+ }
+ 
+ .brand-txt-col {
      color: #715092;
-
-}
-.bg-newsfeed{
-     background-color: #715092;
+ }
+ 
+ .bg-newsfeed {
+     background-color: #FF4EDB;
      color: white;
      padding: 10px;
-     border-radius: 5px;
+     border-radius: 1rem !important;
      margin-bottom: 20px;
+     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3); 
+
+ }
+ 
+.bg-event{
+    display: flex;
+    background-color: #FF4EDB;
+    border-radius: 15px;
+    justify-content: center;
+    align-items: center;
 }
 
-#brand-btns{
+ #brand-btns {
      background-color: #715092;
-     color: black;
+     color: white;
      border-radius: 15px;
      border: none;
-     color: white;
      cursor: pointer;
-}
-
-#brand-btns:hover{
+ }
+ 
+ #brand-btns:hover {
      background-color: rgb(119, 115, 115);
      color: black;
      border: #715092 2px solid;
-     border-radius: 15px;
-}
-
-#hero-img{
+ }
+ 
+ #hero-img {
+     max-width: 90%;
+     height: auto;
      object-fit: cover;
+     border-radius: 2rem !important;
+     transition: transform 0.3s ease;
      border: #715092 2px solid;
-}
+ }
 
+ /* Style for Upcoming Events Section */
+#events .card {
+     border-radius: 15px; /* Round the corners of the card */
+     overflow: hidden; /* Prevent image overflow */
+   }
+   
+   .card-img-top {
+     height: 250px; /* Fixed height for the event images */
+     object-fit: cover; /* Ensure the image covers the card area */
+     transition: transform 0.3s ease; /* Smooth zoom effect */
+   }
+   
+   .card:hover .card-img-top {
+     transform: scale(1.05); /* Slight zoom effect on hover */
+   }
+   
+   .card-title {
+     font-size: 1.5rem;
+     font-weight: bold;
+     color: #715092; /* Your brand color */
+   }
+   
+   .card-body {
+     padding: 1.5rem;
+   }
+   
+   .btn-primary {
+     background-color: #715092;
+     border-radius: 25px;
+     padding: 10px 30px;
+   }
+   
+   .btn-primary:hover {
+     background-color: #FF4EDB !important;
+     border: none;
+     color: white !important;
+   }
+   
+   /* Media Queries for Responsiveness */
+   @media (max-width: 768px) {
+     .card-img-top {
+       height: 200px; /* Adjust image height for smaller screens */
+     }
+     .card-title {
+       font-size: 1.3rem;
+     }
+   }
+   
+ 

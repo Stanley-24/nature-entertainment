@@ -25,24 +25,24 @@
       class="d-flex navbar p-1 gap-5 align-items-center m-2 shadow-lg bg-body-tertiary rounded-3"
     >
       <div class="logo me-5 m-2 align-items-center d-flex">
-        <img src="images/logo.png" alt="Logo" class="img-fluid" />
-        <h2 class="text-uppercase">Nature Entertainment</h2>
+        <img src="/April/assets/images/Icon_color_512X512.png" alt="Logo" class="img-fluid logo-img" />
+        <h2 class="text-uppercase logo-text">Nature Entertainment</h2>
       </div>
+      <!--Nav buttons-->
       <nav class="ms-5">
         <ul class="nav">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#"
-              >Contact us</a
-            >
+            <a class="nav-link active" aria-current="page" href="#">Contact Us</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Tickets</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About us</a>
+            <a class="nav-link" href="#">About Us</a>
           </li>
         </ul>
       </nav>
+      
     </header>
 
     <!-- Main content -->
@@ -54,7 +54,7 @@
          <div class="col-lg-6 d-flex flex-column justify-content-between gap-4">
 
           <!-- 📌 TOP STACK: Headings + CTA -->
-          <div>
+          <div class="flex-grow-1">
             <h4 class="text-uppercase fw-bold brand-txt-col">Day Vibes. Nature Style.</h4>
             <h3 class="display-5 fw-bold">Nature Entertainment Presents</h3>
             <p class="text-muted">
@@ -68,23 +68,79 @@
           </div>
 
           <!-- 📩 BOTTOM STACK: Newsletter Form -->
-         <div class="bg-newsfeed p-4 rounded shadow-sm">
+          <div class="bg-newsfeed p-4 rounded shadow-sm">
           <h5 class="mb-2">Get all the latest gist from us ... 🎶</h5>
 
           <form action="#" method="POST" class="d-flex flex-column flex-sm-row gap-2">
             <input type="email" class="form-control" placeholder="Enter your email" required />
             <button type="submit" class="btn btn-dark">Subscribe</button>
           </form>
-         </div>
-         </div>
-          <!-- Right column with image -->
-          <div class="col-lg-6 text-center mt-4 mt-lg-0">
-            <img src="/April/assets/images/logo-03.jpg" class="img-fluid rounded" id="hero-img" alt="Brand design flyer for homepage" />
           </div>
+         </div>
+
+         
+        <!-- Right column with image -->
+        <div class="col-lg-6 text-center mt-4 mt-lg-0 d-flex align-items-center justify-content-center">
+          <img src="/April/assets/images/previous-event3.JPG" class="img-fluid rounded" id="hero-img" alt="Brand design flyer for homepage" />
+        </div>
+
        </div>
       </section>
 
-      <section class="upcoming-event"></section>
+            <!-- Upcoming Events Section -->
+      <section id="events" class="py-5 bg-light">
+        <div class="container">
+          <h2 class="text-center mb-4 bg-event p-3">Upcoming Events</h2>
+          
+          <!-- Event Cards Grid -->
+          <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="card shadow-lg border-0">
+                <img src="/April/assets/images/upcoming-event.JPG" alt="Party Event" class="card-img-top" />
+                <div class="card-body">
+                  <h5 class="card-title text-center">Epic Party Vibes</h5>
+                  <p class="text-center">Join us for an unforgettable night of fun and music!</p>
+                  <div class="d-flex justify-content-center mt-3">
+                    <a href="#tickets" class="btn btn-primary">Buy Tickets</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="card shadow-lg border-0">
+                <img src="/April/assets/images/upcoming-event1.JPG" alt="Party Event" class="card-img-top" />
+                <div class="card-body">
+                  <h5 class="card-title text-center">VIP Lounge Party</h5>
+                  <p class="text-center">A night of luxury and excitement with the best crowd.</p>
+                  <div class="d-flex justify-content-center mt-3">
+                    <a href="#tickets" class="btn btn-primary">Buy Tickets</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="card shadow-lg border-0">
+                <img src="/April/assets/images/upcoming-event2.jpg" alt="Party Event" class="card-img-top" />
+                <div class="card-body">
+                  <h5 class="card-title text-center">Nightlife Reimagined</h5>
+                  <p class="text-center">Get ready for the ultimate night of music, dance, and more!</p>
+                  <div class="d-flex justify-content-center mt-3">
+                    <a href="#tickets" class="btn btn-primary">Buy Tickets</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Additional Cards can be added here -->
+          </div>
+        </div>
+      </section>
+
 
       <section class="past-event"></section>
     </main>
