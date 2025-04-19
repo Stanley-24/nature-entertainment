@@ -251,3 +251,23 @@ footer img {
   color: rgba(38, 6, 100, 1); /* darker purple */
   transform: scale(1.2);
 }
+@media (max-width: 360px) {
+  .navbar-nav .nav-link {
+    font-size: 0.8rem; /* smaller text */
+    padding: 0.3rem 0.5rem; /* less padding */
+  }
+
+  #darkToggleBtn {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .logo h5 {
+    font-size: 1rem; /* reduce logo text */
+  }
+
+  .navbar-toggler {
+    padding: 0.25rem 0.4rem;
+  }
+}
+
