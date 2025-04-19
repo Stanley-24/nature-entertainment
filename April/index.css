@@ -146,6 +146,31 @@
        font-size: 1.3rem;
      }
    }
+   .previos-img{
+     width: 100%;
+     height: 300px;
+     border-radius: 10px;
+     object-fit: cover;
+     transition: all 0.5s ease-in-out;
+     cursor: pointer;
+    
+   }
+   .previos-img:hover{
+     transform:scale(1.06);
+     box-shadow: 0 6px 18px rgba(113, 80, 146, 0.3); /* subtle purple glow */
+
+   }
+   footer{
+    background-color: #FF4EDB;
+    width: 100%;
+   }
+   .footer-text{
+    color: rgba(113, 67, 204, 0.8);
+    font-size: 1.2rem;
+=======
+    }
+}
+
    .previos-img {
     border-radius: 1.2rem !important;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
