@@ -74,18 +74,13 @@
 }
 
  #brand-btns {
-<<<<<<< HEAD:April/index.css
-     background-color:rgba(113, 67, 204, 0.8);
-     color: #FF4EDB;
-     font-weight: bold !important;
-=======
-     background-color: #715092;
-     color: #fff;
->>>>>>> 5c45074aac2cc1968f2048068cbfe95a43f08a89:index.css
-     border-radius: 15px;
-     border: none;
-     cursor: pointer;
- }
+ background-color:rgba(113, 67, 204, 0.8);
+ color: #FF4EDB;
+ font-weight: bold !important;
+ border-radius: 15px;
+ border: none;
+ cursor: pointer;
+}
  
  #brand-btns:hover,
  #brand-btns:focus {
@@ -149,30 +144,8 @@
     }
      .card-title {
        font-size: 1.3rem;
-<<<<<<< HEAD:April/index.css
      }
    }
-   .previos-img{
-     border-radius: 10px;
-     object-fit: cover;
-     transition: all 0.5s ease-in-out;
-     cursor: pointer;
-    
-   }
-   .previos-img:hover{
-     transform:scale(1.06);
-   }
-   footer{
-    background-color: #FF4EDB;
-    width: 100%;
-   }
-   .footer-text{
-    color: rgba(113, 67, 204, 0.8);
-    font-size: 1.2rem;
-=======
-    }
-}
-
    .previos-img {
     border-radius: 1.2rem !important;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -227,8 +200,15 @@ footer img {
 @media (max-width: 768px) {
   footer .d-flex {
     flex-direction: column !important;
->>>>>>> 5c45074aac2cc1968f2048068cbfe95a43f08a89:index.css
-    text-align: center;
+    :root {
+      --transition-duration: 0.3s;
+    }
+    
+    .social-icon i,
+    .text-purple-black,
+    .card-img-top {
+      transition: all var(--transition-duration) ease;
+    }    text-align: center;
   }
 
   footer img {
