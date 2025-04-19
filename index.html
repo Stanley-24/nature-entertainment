@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en"  >
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NatureEntertainment</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  </head>
+
+  <body>
+    <header class="navbar navbar-expand-lg sticky-top p-1   m-2 shadow-lg bg-body-tertiary rounded-3">
+      <div class="container-fluid ">
+        <div class="logo d-flex align-items-center me-3">
+          <img src="assets/Icon_color_512X512.png" alt="Logo" width="40" class="img-fluid me-2" />
+          <h5 class="text-purple mb-0">Nature Entertainment</h5>
+        </div>
+    
+        <button
+          class="navbar-toggler custom-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarContent"
+          aria-controls="navbarContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span id="navbar-toggler-icon" class="navbar-toggler-icon "></span>
+        </button>
+    
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <div class="ms-auto d-flex flex-column flex-lg-row align-items-start align-items-lg-center gap-3">
+            
+            <!-- Nav links -->
+            <ul class="navbar-nav d-flex flex-column flex-lg-row align-items-start align-items-lg-center gap-3">
+              <li class="nav-item">
+                <a class="nav-link text-purple-black" href="#">Contact us</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-purple-black" href="#">Tickets</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-purple-black" href="#">About us</a>
+              </li>
+            </ul>
+        
+            <!-- Dark mode toggle -->
+            <button id="darkToggleBtn" class="btn btn-outline-secondary d-flex align-items-center gap-2">
+              <i id="themeIcon" class="bi bi-moon-stars"></i>
+              <span id="themeBtnText">Dark Mode</span>
+            </button>
+            
+          </div>
+        </div>
+        
+        
+        
+      </div>
+    </header>
+    <!-- Main content -->
+    <main class="container p-5">
+      <section class="Hero py-5 ">
+       <div class="row align-items-center">
+
+        <!-- Left column with two stacks-->
+         <div class="col-lg-6 d-flex flex-column justify-content-between gap-4">
+
+          <!-- 📌 TOP STACK: Headings + CTA -->
+          <div class="flex-grow-1">
+            <h4 class="text-uppercase fw-bold brand-txt-col">Day Vibes. Nature Style.</h4>
+            <h3 class="display-5 fw-bold">Nature Entertainment Presents</h3>
+            <p class="text-muted">
+              We’re flipping the script on day parties, proving that epic vibes can happen <blockquote>
+                Tix to our next party ⬇️⬇️
+              </blockquote>
+            </p>
+            <button type="button" class="btn btn-primary btn-lg" id="brand-btns">
+              GET TICKETS
+            </button>
+          </div>
+
+          <!-- 📩 BOTTOM STACK: Newsletter Form -->
+          <div class="bg-newsfeed p-4 rounded shadow-sm">
+          <h5 class="mb-2">Get all the latest gist from us ... 🎶</h5>
+
+          <form action="#" method="POST" class="d-flex flex-column flex-sm-row gap-2">
+            <input type="email" class="form-control" placeholder="Enter your email" required />
+            <button type="submit" class="btn btn-dark">Subscribe</button>
+          </form>
+          </div>
+         </div>
+
+         
+        <!-- Right column with image -->
+        <div class="col-lg-6 text-center mt-4 mt-lg-0 d-flex align-items-center justify-content-center">
+          <img src="assets/previous-event3.JPG" class="img-fluid rounded" id="hero-img" alt="Brand design flyer for homepage" />
+        </div>
+
+       </div>
+      </section>
+
+            <!-- Upcoming Events Section -->
+      <section id="events" class="py-5 ">
+        <div class="container">
+          <h2 class="text-center mb-4 bg-event p-2">Upcoming Events</h2>
+          
+          <!-- Event Cards Grid -->
+          <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="card shadow-lg border-0">
+                <img src="assets/upcoming-event.JPG" alt="Party Event" class="card-img-top" />
+                <div class="card-body">
+                  <h5 class="card-title text-center">Epic Party Vibes</h5>
+                  <p class="text-center">Join us for an unforgettable night of fun and music!</p>
+                  <div class="d-flex justify-content-center mt-3">
+                    <a href="#tickets" class="btn btn-primary">Buy Tickets</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="card shadow-lg border-0">
+                <img src="assets/upcoming-event1.JPG" alt="Party Event" class="card-img-top" />
+                <div class="card-body">
+                  <h5 class="card-title text-center">VIP Lounge Party</h5>
+                  <p class="text-center">A night of luxury and excitement with the best crowd.</p>
+                  <div class="d-flex justify-content-center mt-3">
+                    <a href="#tickets" class="btn btn-primary">Buy Tickets</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="card shadow-lg border-0">
+                <img src="assets/upcoming-event2.jpg" alt="Party Event" class="card-img-top" />
+                <div class="card-body">
+                  <h5 class="card-title text-center">Nightlife Reimagined</h5>
+                  <p class="text-center">Get ready for the ultimate night of music, dance, and more!</p>
+                  <div class="d-flex justify-content-center mt-3">
+                    <a href="#tickets" class="btn btn-primary">Buy Tickets</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Additional Cards can be added here -->
+          </div>
+        </div>
+      </section>
+
+
+      <section class="past-event py-5">
+        <div class="container">
+          <h2 class="text-center mb-4 bg-event p-2 rounded">Past Events</h2>
+      
+          <!-- Image Gallery Grid -->
+          <div class="row g-4">
+            <!-- Loop through images -->
+            <div class="col-lg-4 col-md-6 col-sm-12" >
+              <div class="card shadow-lg border-0">
+                <img src="/April/assets/previos-event.JPG" alt="Party Event" class="previos-img img-fluid rounded" />
+              </div>
+            </div>
+      
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="card shadow-lg border-0">
+                <img src="/April/assets/previos-event9.JPG"" alt="Party Event" class="previos-img img-fluid rounded" />
+              </div>
+            </div>
+      
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="card shadow-lg border-0">
+                <img src="/April/assets/previous-event1.JPG" alt="Party Event" class="previos-img img-fluid rounded" />
+              </div>
+            </div>
+      
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="card shadow-lg border-0">
+                <img src="/April/assets/previous-event2.JPG" alt="Party Event" class="previos-img img-fluid rounded" />
+              </div>
+            </div>
+      
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="card shadow-lg border-0">
+                <img src="/April/assets/previous-event4.JPG" alt="Party Event" class="previos-img img-fluid rounded" />
+              </div>
+            </div>
+      
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="card shadow-lg border-0">
+                <img src="/April/assets/previous-event5.JPG" alt="Party Event" class="previos-img img-fluid rounded" />
+              </div>
+            </div>
+      
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="card shadow-lg border-0">
+                <img src="/April/assets/previous-event6.JPG" alt="Party Event" class="previos-img img-fluid rounded" />
+              </div>
+            </div>
+      
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="card shadow-lg border-0">
+                <img src="/April/assets/previos-event7.JPG" alt="Party Event" class="previos-img img-fluid rounded" />
+              </div>
+            </div>
+      
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="card shadow-lg border-0">
+                <img src="/April/assets/previos-event8.JPG" alt="Party Event" class="previos-img img-fluid rounded" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+      
+    </main>
+    <footer class="text-center text-lg-start mt-5">
+      <div class="container">
+        <div class="row align-items-start">
+    
+          <!-- Left Column: Logo -->
+          <div class="col-md-4 mb-3 mb-md-0 d-flex justify-content-center justify-content-md-start">
+            <img src="/April/assets/NE-logo2.png" alt="Nature Entertainment Logo">
+          </div>
+    
+          <!-- Right Column: Flex with 3 items -->
+          <div class="col-md-8">
+            <div class="d-flex flex-column flex-md-row justify-content-between gap-3">
+    
+              <!-- Policies -->
+              <div>
+                <p class="mb-1">&copy; 2025 Nature Entertainment. All rights reserved.</p>
+                <a href="#" class="d-block">Privacy Policy</a>
+                <a href="#" class="d-block">Terms of Service</a>
+              </div>
+    
+              <!-- Contact -->
+              <div>
+                <p class="mb-1 fw-bold">Contact Us</p>
+                <a href="mailto:info@natureentertainment.com">info@natureentertainment.com</a>
+              </div>
+    
+              <!-- Social Media -->
+              <div>
+                <p class="mb-1 fw-bold">Follow Us</p>
+                <a href="https://www.instagram.com/yourbrand" target="_blank" class="social-icon">
+                  <i class="bi bi-instagram"></i>
+                </a>
+              </div>
+    
+            </div>
+          </div>
+    
+        </div>
+      </div>
+    </footer>
+    
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+    <script src="script.js"></script> 
+  </body>
+</html>
