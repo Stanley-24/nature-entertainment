@@ -2,7 +2,22 @@
  *{
      font-family: "Raleway", sans-serif;
 }
-.raleway {
-     font-family: 'Raleway', sans-serif;
+
+.text-purple-black {
+     color: rgba(38, 6, 100, 0.8); 
+     font-weight: semibold;
+     font-size: 1.6rem;
+     text-align: center;
+     transition: all 0.5s ease-in-out;
 }
+.text-purple-black:hover {
+     font-weight: bold;
+     color: rgba(38, 6, 100, 1);
+     transform: scale(1.06);
+}
+.text-purple{
+     color: rgba(38, 6, 100, 0.8); 
+     font-weight: semibold;
+     font-size: 1.6rem;
+}   
    
