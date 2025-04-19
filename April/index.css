@@ -19,84 +19,9 @@
      font-weight: semibold;
      font-size: 1.6rem;
 }   
-   
- }
- 
- 
- .logo {
-     display: flex;
-     align-items: center;
-     gap: 10px;
-     color: #6C63FF;
- }
- 
- .logo-img {
-     max-height: 50px;
-     object-fit: contain;
-     transition: transform 0.3s ease;
- }
- 
- .logo-text {
-     font-size: 2rem;
-     font-weight: 700;
-     color: #333;
-     letter-spacing: 2px;
- }
- 
- .logo:hover .logo-img {
-     transform: scale(1.1);
- }
- 
- @media (max-width: 768px) {
-     .logo-img {
-         max-height: 40px;
-     }
- 
-     .logo-text {
-         font-size: 1.5rem;
-     }
- }
- 
- nav ul {
-     list-style: none;
-     display: flex;
-     gap: 20px;
- }
- 
- .nav-item {
-     margin-right: 20px;
- }
- 
- .nav-link {
-     color: #333;
-     font-size: 1rem;
-     font-weight: 600;
-     text-transform: uppercase;
-     transition: color 0.3s ease;
- }
- 
- .nav-link:hover {
-     color: #6C63FF;
- }
- 
- .nav-link.active {
-     color: #6C63FF;
- }
- 
- @media (max-width: 768px) {
-     nav ul {
-         flex-direction: column;
-         align-items: center;
-     }
- 
-     .nav-link {
-         font-size: 1.1rem;
-         text-align: center;
-     }
- }
  
  .brand-txt-col {
-     color: #715092;
+     color: #FF4EDB;
  }
  
  .bg-newsfeed {
@@ -112,6 +37,7 @@
 .bg-event{
     display: flex;
     background-color: #FF4EDB;
+    color: #715092;
     border-radius: 15px;
     justify-content: center;
     align-items: center;
@@ -119,16 +45,15 @@
 
  #brand-btns {
      background-color: #715092;
-     color: white;
+     color: #FF4EDB;
      border-radius: 15px;
      border: none;
      cursor: pointer;
  }
  
  #brand-btns:hover {
-     background-color: rgb(119, 115, 115);
-     color: black;
-     border: #715092 2px solid;
+     color: #715092;
+    
  }
  
  #hero-img {
@@ -137,7 +62,7 @@
      object-fit: cover;
      border-radius: 2rem !important;
      transition: transform 0.3s ease;
-     border: #715092 2px solid;
+     
  }
 
  /* Style for Upcoming Events Section */
@@ -150,6 +75,7 @@
      height: 250px; /* Fixed height for the event images */
      object-fit: cover; /* Ensure the image covers the card area */
      transition: transform 0.3s ease; /* Smooth zoom effect */
+     border-radius: 5px;
    }
    
    .card:hover .card-img-top {
@@ -159,7 +85,7 @@
    .card-title {
      font-size: 1.5rem;
      font-weight: bold;
-     color: #715092; /* Your brand color */
+     color: #FF4EDB; /* Your brand color */
    }
    
    .card-body {
@@ -170,6 +96,7 @@
      background-color: #715092;
      border-radius: 25px;
      padding: 10px 30px;
+     color: #FF4EDB;
    }
    
    .btn-primary:hover {
@@ -187,5 +114,24 @@
        font-size: 1.3rem;
      }
    }
-   
+   .previos-img{
+     border-radius: 10px;
+     object-fit: cover;
+     transition: all 0.5s ease-in-out;
+     cursor: pointer;
+    
+   }
+   .previos-img:hover{
+     transform:scale(1.06);
+   }
+   footer{
+    background-color: #FF4EDB;
+    width: 100%;
+   }
+   .footer-text{
+    color: #715092;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 20px 0;
+   }
  
