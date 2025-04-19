@@ -270,4 +270,42 @@ footer img {
     padding: 0.25rem 0.4rem;
   }
 }
+@media (max-width: 400px) {
+  .navbar-nav .nav-link {
+    font-size: 0.8rem; /* smaller text */
+    padding: 0.3rem 0.5rem; /* less padding */
+  }
+
+  #darkToggleBtn {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .logo h5 {
+    font-size: 1rem; /* reduce logo text */
+  }
+
+  .navbar-toggler {
+    padding: 0.25rem 0.4rem;
+  }
+}
+@media (max-width: 414px) {
+  .navbar-nav .nav-link {
+    font-size: 0.8rem; /* smaller text */
+    padding: 0.3rem 0.5rem; /* less padding */
+  }
+
+  #darkToggleBtn {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.5rem;
+  }
+
+  .logo h5 {
+    font-size: 1rem; /* reduce logo text */
+  }
+
+  .navbar-toggler {
+    padding: 0.25rem 0.4rem;
+  }
+}
 
