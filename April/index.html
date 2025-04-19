@@ -43,16 +43,105 @@
           </li>
         </ul>
       </nav>
+      
     </header>
 
     <!-- Main content -->
     <main class="container p-5">
-      <section class="Hero">
-        <h1 class="raleway">wwwww</h1>
-        <img src="assets/music.jpg" alt="">
+      <section class="Hero py-5 bg-light">
+       <div class="row align-items-center">
+
+        <!-- Left column with two stacks-->
+         <div class="col-lg-6 d-flex flex-column justify-content-between gap-4">
+
+          <!-- 📌 TOP STACK: Headings + CTA -->
+          <div class="flex-grow-1">
+            <h4 class="text-uppercase fw-bold brand-txt-col">Day Vibes. Nature Style.</h4>
+            <h3 class="display-5 fw-bold">Nature Entertainment Presents</h3>
+            <p class="text-muted">
+              We’re flipping the script on day parties, proving that epic vibes can happen <blockquote>
+                Tix to our next party ⬇️⬇️
+              </blockquote>
+            </p>
+            <button type="button" class="btn btn-primary btn-lg" id="brand-btns">
+              GET TICKETS
+            </button>
+          </div>
+
+          <!-- 📩 BOTTOM STACK: Newsletter Form -->
+          <div class="bg-newsfeed p-4 rounded shadow-sm">
+          <h5 class="mb-2">Get all the latest gist from us ... 🎶</h5>
+
+          <form action="#" method="POST" class="d-flex flex-column flex-sm-row gap-2">
+            <input type="email" class="form-control" placeholder="Enter your email" required />
+            <button type="submit" class="btn btn-dark">Subscribe</button>
+          </form>
+          </div>
+         </div>
+
+         
+        <!-- Right column with image -->
+        <div class="col-lg-6 text-center mt-4 mt-lg-0 d-flex align-items-center justify-content-center">
+          <img src="/April/assets/images/previous-event3.JPG" class="img-fluid rounded" id="hero-img" alt="Brand design flyer for homepage" />
+        </div>
+
+       </div>
       </section>
 
-      <section class="upcoming-event"></section>
+            <!-- Upcoming Events Section -->
+      <section id="events" class="py-5 bg-light">
+        <div class="container">
+          <h2 class="text-center mb-4 bg-event p-3">Upcoming Events</h2>
+          
+          <!-- Event Cards Grid -->
+          <div class="row g-4">
+            <!-- Card 1 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="card shadow-lg border-0">
+                <img src="/April/assets/images/upcoming-event.JPG" alt="Party Event" class="card-img-top" />
+                <div class="card-body">
+                  <h5 class="card-title text-center">Epic Party Vibes</h5>
+                  <p class="text-center">Join us for an unforgettable night of fun and music!</p>
+                  <div class="d-flex justify-content-center mt-3">
+                    <a href="#tickets" class="btn btn-primary">Buy Tickets</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="card shadow-lg border-0">
+                <img src="/April/assets/images/upcoming-event1.JPG" alt="Party Event" class="card-img-top" />
+                <div class="card-body">
+                  <h5 class="card-title text-center">VIP Lounge Party</h5>
+                  <p class="text-center">A night of luxury and excitement with the best crowd.</p>
+                  <div class="d-flex justify-content-center mt-3">
+                    <a href="#tickets" class="btn btn-primary">Buy Tickets</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="col-lg-4 col-md-6 col-sm-12">
+              <div class="card shadow-lg border-0">
+                <img src="/April/assets/images/upcoming-event2.jpg" alt="Party Event" class="card-img-top" />
+                <div class="card-body">
+                  <h5 class="card-title text-center">Nightlife Reimagined</h5>
+                  <p class="text-center">Get ready for the ultimate night of music, dance, and more!</p>
+                  <div class="d-flex justify-content-center mt-3">
+                    <a href="#tickets" class="btn btn-primary">Buy Tickets</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Additional Cards can be added here -->
+          </div>
+        </div>
+      </section>
+
 
       <section class="past-event"></section>
     </main>
