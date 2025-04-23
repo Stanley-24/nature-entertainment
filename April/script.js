@@ -50,46 +50,48 @@ function LoadNavbarAndFooter() {
   </header>`;
 
   const footerHtml = 
-  `<footer class="text-center text-lg-start mt-5">
-    <div class="container">
-      <div class="row align-items-start">
-  
-        <!-- Left Column: Logo -->
-        <div class="col-md-4 mb-3 mb-md-0 d-flex justify-content-center justify-content-md-start">
-          <img src="assets/NE-logo2.png" alt="Nature Entertainment Logo">
-        </div>
-  
-        <!-- Right Column: Flex with 3 items -->
-        <div class="col-md-8">
-          <div class="d-flex flex-column flex-md-row justify-content-between gap-3">
-  
-            <!-- Policies -->
-            <div>
-              <p class="mb-1">&copy; 2025 Nature Entertainment. All rights reserved.</p>
-              <a href="#" class="d-block">Privacy Policy</a>
-              <a href="#" class="d-block">Terms of Service</a>
-            </div>
-  
-            <!-- Contact -->
-            <div>
-              <p class="mb-1 fw-bold">Contact Us</p>
-              <a href="mailto:info@natureentertainment.com">info@natureentertainment.com</a>
-            </div>
-  
-            <!-- Social Media -->
-            <div>
-              <p class="mb-1 fw-bold">FollowUs</p>
-              <a href="https://www.instagram.com/yourbrand" target="_blank" class="social-icon">
-                <i class="bi bi-instagram"></i>
-              </a>
-            </div>
-  
+  `<footer class="text-center text-lg-start mt-0">
+      <div class="container">
+        <div class="row align-items-start">
+    
+          <!-- Left Column: Logo -->
+          <div class="col-md-4 mb-3 mb-md-0 d-flex justify-content-center justify-content-md-start">
+            <img src="assets/NE-logo2.png" alt="Nature Entertainment Logo">
           </div>
+    
+          <!-- Right Column: Flex with 3 items -->
+          <div class="col-md-8">
+            <div class="d-flex flex-column flex-md-row justify-content-between gap-3">
+    
+              <!-- Policies -->
+              <div>
+                <a href="#" class="d-block">Privacy Policy</a>
+                <a href="#" class="d-block">Terms of Service</a>
+                <p class="mb-1 copy1">&copy; 2025 Nature Entertainment. All rights reserved.</p>
+
+              </div>
+    
+              <!-- Contact -->
+              <div>
+                <p class="mb-1 fw-bold">Contact Us</p>
+                <a href="mailto:info@natureentertainment.com">info@natureentertainment.com</a>
+              </div>
+    
+              <!-- Social Media -->
+              <div>
+                <p class="mb-1 fw-bold">FollowUs</p>
+                <a href="https://www.instagram.com/yourbrand" target="_blank" class="social-icon">
+                  <i class="bi bi-instagram"></i>
+                </a>
+              </div>
+              <p class="mb-1 copy2">&copy; 2025 Nature Entertainment. All rights reserved.</p>
+
+            </div>
+          </div>
+    
         </div>
-  
       </div>
-    </div>
-  </footer>`;
+    </footer>`;
 
   document.getElementById("navbar").innerHTML = navbarHtml;
   document.getElementById("footer").innerHTML = footerHtml
