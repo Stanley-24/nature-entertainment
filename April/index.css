@@ -110,6 +110,13 @@ body {
      
  }
 
+ .hero-text {
+    text-align: center;
+ }
+ .hero-text p {
+    font-size: 1.2rem;
+ }
+
  /* Style for Upcoming Events Section */
 #events .card {
      border-radius: 15px; /* Round the corners of the card */
@@ -174,7 +181,7 @@ body {
 
    }
    footer{
-    background-color: #FF4EDB;
+    background-color: #FF4EDB; opacity: 0.8;
     width: 100%;
    }
    .footer-text{
@@ -197,14 +204,20 @@ body {
     box-shadow: 0 6px 18px rgba(113, 80, 146, 0.3); /* subtle purple glow */
 }
   
+.copy2 {
+  display: none; /* Hide the copy text in the footer for large screen */
+}
 
+.copy1 {
+  margin-top: 55px!important;
+}
 
 footer {
   background-color: #FF4EDB;
   color: #fff;
   font-family: "Raleway", sans-serif;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 2.2rem;
+  padding-bottom: 2rem;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
   box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.1);
@@ -236,21 +249,41 @@ footer img {
 }
 
 @media (max-width: 768px) {
-  footer .d-flex {
-    flex-direction: column !important;
-    :root {
-      --transition-duration: 0.3s;
-    }
-    
-    .social-icon i,
-    .text-purple-black,
-    .card-img-top {
-      transition: all var(--transition-duration) ease;
-    }    text-align: center;
+  footer {
+    padding-top: 0.8rem;
+    padding-bottom: 0.8rem;
   }
 
   footer img {
-    margin-bottom: 1.5rem;
+    max-width: 90px;
+    margin-bottom: 0.9rem;
+  }
+
+  footer p,
+  footer a {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+  }
+
+  footer p.fw-bold {
+    font-size: 1.1rem;
+  }
+
+  footer .d-flex {
+    gap: 0.5rem !important;
+    margin-top: 0.5rem;
+  }
+  .copy1 {
+    display: none;
+  }
+  .copy2 {
+    display: block; /* Show the copy text in the footer for small screen */
+    font-size: 0.9rem;
+    margin-top: 1rem;
+    margin-top: 3px !important;
+  }
+  footer p {
+    font-size: 1.2rem;
   }
 }
 
