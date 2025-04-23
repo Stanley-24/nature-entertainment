@@ -3,11 +3,11 @@
 function LoadNavbarAndFooter() {
 
   const navbarHtml =
-   ` <header class="navbar navbar-expand-lg fixed-top p-1  m-2 shadow-lg bg-body-tertiary rounded-3">
+   ` <header class="navbar navbar-expand-lg fixed-top p-1  m-1 shadow-lg bg-body-tertiary rounded-3">
     <div class="container-fluid ">
-      <div class="logo d-flex align-items-center me-3">
-        <img src="assets/Icon_color_512X512.png" alt="Logo" width="40" class="img-fluid me-2" />
-        <h5 class="text-purple fw-semibold mb-0">Nature Entertainment</h5>
+      <div class="logo d-flex align-items-center me-2">
+        <img src="assets/Icon_color_512X512.png" alt="Logo" width="40" class="img-fluid me-3"/>
+        <h5 class="text-purple mb-0">Nature Entertainment</h5>
       </div>
   
       <button
@@ -28,7 +28,7 @@ function LoadNavbarAndFooter() {
           
           <!-- Nav links -->
           <ul class="navbar-nav d-flex flex-column flex-lg-row align-items-start align-items-lg-center gap-3">
-            <li class="nav-item">
+            <li class="nav-item ">
               <a class="nav-link text-purple-black" href="#">Contact us</a>
             </li>
             <li class="nav-item">
