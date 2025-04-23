@@ -1,6 +1,19 @@
-* {
+body {
      font-family: "Raleway", sans-serif;
+     background-image: url('assets/ligh_bg01.jpg'); 
+     background-size: fill;
+     background-position: center center;
+     background-repeat: repeat;
+     background-attachment: fixed;
 }
+[data-bs-theme="dark"] body{
+  background-image: url('assets/dark_bg01.jpg');
+  background-size: fill;
+  background-position: center center;
+  background-repeat: repeat;
+  background-attachment: fixed;
+}
+
 .custom-toggler .navbar-toggler-icon {
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23FF4EDB' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
 }
@@ -22,7 +35,7 @@
 }
   
 
- .custom-toggler:focus,
+.custom-toggler:focus,
 .custom-toggler:active,
 .custom-toggler:focus-visible {
     box-shadow: 0 0 0 0.25rem rgba(255, 78, 219, 0.5); 
