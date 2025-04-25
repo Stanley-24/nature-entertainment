@@ -1,89 +1,82 @@
 <!DOCTYPE html>
-<html lang="en"  >
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>NatureEntertainment</title>
-    <link rel="icon" href="assets/Icon_color_512X512.png" type="image/png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/Icon_color_512X512.png" type="image/png" />
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet" />
+
+    <!-- Bootstrap CSS -->
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
       rel="stylesheet"
       integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="index.css" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  
-    <link
-      href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
 
+    <!-- Font Awesome & Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="index.css" />
   </head>
 
   <body>
+    <!-- Navbar -->
     <div id="navbar"></div>
-    <!-- Main content -->
+
     <main class="container mt-3 pt-5">
-      <section class="Hero py-5 ">
-       <div class="row align-items-center">
+      <!-- Hero Section -->
+      <section class="Hero py-5">
+        <div class="row align-items-center">
+          <div class="col-lg-6 d-flex flex-column justify-content-between gap-4">
+            <!-- Hero Text -->
+            <div class="flex-grow-1 hero-text">
+              <h4 class="text-uppercase fw-bold brand-txt-col">Day Vibes. Nature Style.</h4>
+              <h3 class="display-5 fw-bold">Nature Entertainment Presents</h3>
+              <p class="text-muted mytheme-text">
+                We’re flipping the script on day parties, proving that epic vibes can happen
+                <blockquote>Tix to our next party ⬇️⬇️</blockquote>
+              </p>
+              <button type="button" class="btn btn-primary btn-lg" id="brand-btns">GET TICKETS</button>
+            </div>
 
-        <!-- Left column with two stacks-->
-         <div class="col-lg-6 d-flex flex-column justify-content-between gap-4">
-
-          <!-- 📌 TOP STACK: Headings + CTA -->
-          <div class="flex-grow-1 hero-text">
-            <h4 class="text-uppercase fw-bold brand-txt-col">Day Vibes. Nature Style.</h4>
-            <h3 class="display-5 fw-bold">Nature Entertainment Presents</h3>
-            <p class="text-muted mytheme-text">
-              We’re flipping the script on day parties, proving that epic vibes can happen <blockquote>
-                Tix to our next party ⬇️⬇️
-              </blockquote>
-            </p>
-            <button type="button" class="btn btn-primary btn-lg" id="brand-btns">
-              GET TICKETS
-            </button>
+            <!-- Newsletter Form -->
+            <div class="bg-newsfeed p-4 rounded shadow-sm">
+              <h5 class="mb-2">Get all the latest gist from us ... 🎶</h5>
+              <form action="#" method="POST" class="d-flex flex-column flex-sm-row gap-2">
+                <input type="email" class="form-control" placeholder="Enter your email" required />
+                <button type="submit" class="btn btn-dark">Subscribe</button>
+              </form>
+            </div>
           </div>
 
-          <!-- 📩 BOTTOM STACK: Newsletter Form -->
-          <div class="bg-newsfeed p-4 rounded shadow-sm">
-          <h5 class="mb-2">Get all the latest gist from us ... 🎶</h5>
-
-          <form action="#" method="POST" class="d-flex flex-column flex-sm-row gap-2">
-            <input type="email" class="form-control" placeholder="Enter your email" required />
-            <button type="submit" class="btn btn-dark">Subscribe</button>
-          </form>
+          <!-- Hero Image -->
+          <div class="col-lg-6 text-center mt-4 mt-lg-0 d-flex align-items-center justify-content-center">
+            <img src="assets/previous-event3.JPG" class="img-fluid rounded" id="hero-img" alt="Brand design flyer for homepage" />
           </div>
-         </div>
-
-         
-        <!-- Right column with image -->
-        <div class="col-lg-6 text-center mt-4 mt-lg-0 d-flex align-items-center justify-content-center">
-          <img src="assets/previous-event3.JPG" class="img-fluid rounded" id="hero-img" alt="Brand design flyer for homepage" />
         </div>
-
-       </div>
       </section>
 
-            <!-- Upcoming Events Section -->
-      <section id="events" class="py-0 ">
+      <!-- Upcoming Events Section -->
+      <section id="events" class="py-0">
         <div class="container">
           <h2 class="text-center mb-4 bg-event p-2">Upcoming Events</h2>
-          
-          <!-- Event Cards Grid -->
           <div class="row g-4">
             <!-- Card 1 -->
             <div class="col-lg-4 col-md-6 col-sm-12">
               <div class="card shadow-lg border-0">
                 <img src="assets/upcoming-event.JPG" alt="Party Event" class="card-img-top" />
-                <div class="card-body">
-                  <h5 class="card-title text-center">Epic Party Vibes</h5>
-                  <p class="text-center">Join us for an unforgettable night of fun and music!</p>
-                  <div  class="d-flex justify-content-center mt-3">
-                    <a  href="#tickets" class="btn btn-primary">Buy Tickets</a>
-                  </div>
+                <div class="card-body text-center">
+                  <h5 class="card-title">Epic Party Vibes</h5>
+                  <p>Join us for an unforgettable night of fun and music!</p>
+                  <a href="#tickets" class="btn btn-primary mt-3">Buy Tickets</a>
                 </div>
               </div>
             </div>
@@ -92,12 +85,10 @@
             <div class="col-lg-4 col-md-6 col-sm-12">
               <div class="card shadow-lg border-0">
                 <img src="assets/upcoming-event1.JPG" alt="Party Event" class="card-img-top" />
-                <div class="card-body">
-                  <h5 class="card-title text-center">VIP Lounge Party</h5>
-                  <p class="text-center">A night of luxury and excitement with the best crowd.</p>
-                  <div class="d-flex justify-content-center mt-3">
-                    <a href="#tickets" class="btn btn-primary">Buy Tickets</a>
-                  </div>
+                <div class="card-body text-center">
+                  <h5 class="card-title">VIP Lounge Party</h5>
+                  <p>A night of luxury and excitement with the best crowd.</p>
+                  <a href="#tickets" class="btn btn-primary mt-3">Buy Tickets</a>
                 </div>
               </div>
             </div>
@@ -106,94 +97,108 @@
             <div class="col-lg-4 col-md-6 col-sm-12">
               <div class="card shadow-lg border-0">
                 <img src="assets/previos-event.JPG" alt="Party Event" class="card-img-top" />
-                <div class="card-body">
-                  <h5 class="card-title text-center">Nightlife Reimagined</h5>
-                  <p class="text-center">Get ready for the ultimate night of music, dance, and more!</p>
-                  <div class="d-flex justify-content-center mt-3">
-                    <a href="#tickets" class="btn btn-primary">Buy Tickets</a>
-                  </div>
+                <div class="card-body text-center">
+                  <h5 class="card-title">Nightlife Reimagined</h5>
+                  <p>Get ready for the ultimate night of music, dance, and more!</p>
+                  <a href="#tickets" class="btn btn-primary mt-3">Buy Tickets</a>
                 </div>
               </div>
             </div>
-
-            <!-- Additional Cards can be added here -->
           </div>
         </div>
       </section>
 
-
+      <!-- Past Events Gallery -->
       <section class="past-event py-5">
         <div class="container">
           <h2 class="text-center mb-4 bg-event p-2 rounded">Past Events</h2>
-      
-          <!-- Image Gallery Grid -->
-          <div class="row g-4">
-            <!-- Loop through images -->
-            <div class="col-lg-4 col-md-6 col-sm-12" >
-              <div class="card shadow-lg border-0">
-                <img src="assets/previos-event.JPG" alt="Party Event" class="previos-img img-fluid rounded" />
+          <section class="custom-gallery py-5">
+            <div class="container">
+            
+              <div class="row g-4">
+                <!-- Loop Through Gallery Images -->
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <div class="card shadow-lg border-0">
+                    <img src="assets/previos-event.JPG" class="previos-img img-fluid rounded" alt="Party Event" />
+                  </div>
+                </div>
+          
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <div class="card shadow-lg border-0">
+                    <img src="assets/previos-event9.JPG" class="previos-img img-fluid rounded" alt="Party Event" />
+                  </div>
+                </div>
+          
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <div class="card shadow-lg border-0">
+                    <img src="assets/previous-event1.JPG" class="previos-img img-fluid rounded" alt="Party Event" />
+                  </div>
+                </div>
+          
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <div class="card shadow-lg border-0">
+                    <img src="assets/previous-event2.JPG" class="previos-img img-fluid rounded" alt="Party Event" />
+                  </div>
+                </div>
+          
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <div class="card shadow-lg border-0">
+                    <img src="assets/previous-event4.JPG" class="previos-img img-fluid rounded" alt="Party Event" />
+                  </div>
+                </div>
+          
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <div class="card shadow-lg border-0">
+                    <img src="assets/previous-event5.JPG" class="previos-img img-fluid rounded" alt="Party Event" />
+                  </div>
+                </div>
+          
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <div class="card shadow-lg border-0">
+                    <img src="assets/previous-event6.JPG" class="previos-img img-fluid rounded" alt="Party Event" />
+                  </div>
+                </div>
+          
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <div class="card shadow-lg border-0">
+                    <img src="assets/previos-event7.JPG" class="previos-img img-fluid rounded" alt="Party Event" />
+                  </div>
+                </div>
+          
+                <div class="col-lg-4 col-md-6 col-sm-12">
+                  <div class="card shadow-lg border-0">
+                    <img src="assets/previos-event8.JPG" class="previos-img img-fluid rounded" alt="Party Event" />
+                  </div>
+                </div>
               </div>
             </div>
-      
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <div class="card shadow-lg border-0">
-                <img src="assets/previos-event9.JPG" alt="Party Event" class="previos-img img-fluid rounded" />
-              </div>
+          
+            <!-- Lightbox Modal -->
+            <div id="lightbox-modal">
+              <span class="close-lightbox">&times;</span>
+              <img class="lightbox-content" id="lightbox-image" alt="Enlarged View" />
+              <button id="prev-btn"  class="prev-btn btn-g round">&#8249;</button>
+              <button id="next-btn" class="next-btn btn-g round">&#8250;</button>
             </div>
-      
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <div class="card shadow-lg border-0">
-                <img src="assets/previous-event1.JPG" alt="Party Event" class="previos-img img-fluid rounded" />
-              </div>
-            </div>
-      
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <div class="card shadow-lg border-0">
-                <img src="assets/previous-event2.JPG" alt="Party Event" class="previos-img img-fluid rounded" />
-              </div>
-            </div>
-      
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <div class="card shadow-lg border-0">
-                <img src="assets/previous-event4.JPG" alt="Party Event" class="previos-img img-fluid rounded" />
-              </div>
-            </div>
-      
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <div class="card shadow-lg border-0">
-                <img src="assets/previous-event5.JPG" alt="Party Event" class="previos-img img-fluid rounded" />
-              </div>
-            </div>
-      
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <div class="card shadow-lg border-0">
-                <img src="assets/previous-event6.JPG" alt="Party Event" class="previos-img img-fluid rounded" />
-              </div>
-            </div>
-      
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <div class="card shadow-lg border-0">
-                <img src="assets/previos-event7.JPG" alt="Party Event" class="previos-img img-fluid rounded" />
-              </div>
-            </div>
-      
-            <div class="col-lg-4 col-md-6 col-sm-12">
-              <div class="card shadow-lg border-0">
-                <img src="assets/previos-event8.JPG" alt="Party Event" class="previos-img img-fluid rounded" />
-              </div>
-            </div>
-          </div>
-      </div>
-    </section>
-        
+          </section>
+          
+        </div>
+      </section>
     </main>
-     <div id="footer"></div>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <!-- JS Scripts -->
     <script
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
       integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
       crossorigin="anonymous"
     ></script>
-    <script src="script.js"></script> 
+
+    
+    
+    <script src="script.js"></script>
     <script>
       LoadNavbarAndFooter();
     </script>

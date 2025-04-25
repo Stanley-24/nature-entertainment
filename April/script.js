@@ -29,13 +29,13 @@ function LoadNavbarAndFooter() {
           <!-- Nav links -->
           <ul class="navbar-nav d-flex flex-column flex-lg-row align-items-start align-items-lg-center gap-3">
             <li class="nav-item ">
-              <a class="nav-link text-purple-black" href="#">Contact us</a>
+              <a class="nav-link text-purple-black" href="#">Contact us <i class="fas fa-phone"  style="font-size:1.3rem; margin-right: 3px; color: #FF4EDB;"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-purple-black" href="#">Tickets</a>
+              <a class="nav-link text-purple-black" href="#">Tickets <i class="fas fa-receipt"  style="font-size:1.3rem; margin-right: 5px; color: #FF4EDB;"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-purple-black" href="#">About us</a>
+              <a class="nav-link text-purple-black" href="#">About us <i class="fas fa-info-circle"  style="font-size:1.3rem; margin-right: 3px; color: #FF4EDB;"></i> </a>
             </li>
           </ul>
       
@@ -84,7 +84,7 @@ function LoadNavbarAndFooter() {
                   <i class="bi bi-instagram"></i>
                 </a>
               </div>
-              <p class="mb-1 copy2">&copy; 2025 Nature Entertainment. All rights reserved.</p>
+              <p class="mb-1 copy2">&copy; 2025 Nature Entertainment.<br> All rights reserved. </p>
 
             </div>
           </div>
@@ -147,6 +147,51 @@ function LoadNavbarAndFooter() {
        }
      });
    })();
+
+   // Select all images
+const images = document.querySelectorAll('.previos-img');
+const modal = document.getElementById('lightbox-modal');
+const modalImg = document.getElementById('lightbox-image');
+const closeBtn = document.querySelector('.close-lightbox');
+const prevBtn = document.getElementById('prev-btn');
+const nextBtn = document.getElementById('next-btn');
+ let currentIndex = 0;
+// Add click event to each image
+ function showImage(index) {
+  modalImg.src = images[index].src;
+  modalImg.classList.add('zoom-in'); // Add animation
+ }
+images.forEach((img, index) => {
+  img.addEventListener('click', () => {
+    currentIndex = index; // Update current index
+    modal.style.display = 'flex';
+    showImage(currentIndex); // Show the clicked image
+  });
+});
+
+// Close the modal when clicking the close button
+closeBtn.addEventListener('click', () => {
+  modal.style.display = 'none';
+  modalImg.classList.remove('zoom-in');
+});
+ prevBtn.addEventListener('click', (e) => { 
+  e.preventDefault();
+  currentIndex = (currentIndex -1 + images.length) % images.length;
+  showImage(currentIndex);
+ });
+ nextBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+  currentIndex = (currentIndex  +1) % images.length;
+  showImage(currentIndex);
+ })
+// Optional: Close modal if user clicks outside the image
+modal.addEventListener('click', (e) => {
+  if (e.target === modal) {
+    modal.style.display = 'none';
+    modalImg.classList.remove('zoom-in');
+  }
+});
+
 
 
   
