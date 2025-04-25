@@ -16,8 +16,12 @@
     "url": "https://github.com/Stanley-24/April/issues"
   },
   "homepage": "https://github.com/Stanley-24/April#readme",
-  "description": "",
   "dependencies": {
-    "bootstrap": "^5.3.5"
-  }
+    "axios": "^1.8.4",
+    "body-parser": "^2.2.0",
+    "bootstrap": "^5.3.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0"
+  },
+  "description": ""
 }
