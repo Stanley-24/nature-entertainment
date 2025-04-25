@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NatureEntertainment Ticket Page</title>
+    <link rel="icon" href="assets/Icon_color_512X512.png" type="image/png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="./ticket_pg.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <div class="page-wrapper d-flex flex-column min-vh-100">
+      <!-- Navbar -->
+      <div id="navbar"></div>
+
+      <!-- Main Content -->
+      <main class="container mt-3 pt-5 flex-grow-1">
+        <section class="container my-5">
+          <h2 class="text-center mb-4 ticket_h2">Get Your Tickets Below</h2>
+          <div class="row justify-content-center" id="ticket-section"></div>
+        </section>
+      </main>
+
+      <!-- Ticket Modal -->
+      <div class="modal fade" id="ticketModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content shadow rounded-4 p-4">
+            <div class="modal-header border-0">
+              <h5 class="modal-title">Buy Ticket</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+              <form
+                id="flutterwaveForm"
+                action="https://checkout.flutterwave.com/v3/hosted/pay"
+                method="POST"
+              >
+                <input type="hidden" name="public_key" value="FLWPUBK_TEST-e8837220d95dd27710f9ee75b7e24f42-X" />
+                <input type="hidden" name="tx_ref" />
+                <input type="hidden" name="amount" />
+                <input type="hidden" name="currency" value="NGN" />
+                <input type="hidden" name="payment_options" value="card, banktransfer" />
+                <input type="hidden" name="redirect_url" value="https://succes-page.vercel.app/" />
+
+
+                <div class="mb-3">
+                  <label class="form-label">Name</label>
+                  <input type="text" name="customer[name]" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Email</label>
+                  <input type="email" name="customer[email]" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Quantity</label>
+                  <input
+                    type="number"
+                    name="quantity"
+                    id="ticketQuantity"
+                    min="1"
+                    value="1"
+                    class="form-control"
+                    required
+                  />
+                </div>
+
+                <input type="hidden" id="baseAmount" />
+
+                <div class="text-end">
+                  <button type="submit" class="btn btn-primary rounded-pill">Pay Now</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div id="footer"></div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- Your Script -->
+    <script src="script.js"></script>
+    <script>
+      const ticketData = [
+        {
+          type: "EARLY_BIRD",
+          name: "Early Bird",
+          price: 10000,
+          desc: "Discounted access for early supporters."
+        },
+        {
+          type: "NATURE_REGULAR",
+          name: "Regular Ticket",
+          price: 15000,
+          desc: "Access to all general areas of the event."
+        },
+        {
+          type: "APRIL_STAGE",
+          name: "Stage Access",
+          price: 25000,
+          desc: "Includes regular access + stage area + VIP Lounge."
+        },
+        
+      ];
+ 
+      function createTicketCards() {
+        const container = document.getElementById("ticket-section");
+        container.innerHTML = ticketData.map(ticket => `
+          <div class="col-md-4 mb-4">
+            <div class="card shadow rounded-4 p-4 h-100 d-flex flex-column justify-content-between">
+              <div>
+                <h3 class="text-center mb-3">${ticket.name}</h3>
+                <p class="text-center">${ticket.desc}</p>
+                <h4 class="text-center">₦${ticket.price.toLocaleString()}</h4>
+              </div>
+              <div class="text-center mt-3">
+                <button class="btn btn-primary rounded-pill px-4" onclick="openForm('${ticket.type}', ${ticket.price})">Buy Ticket</button>
+              </div>
+            </div>
+          </div>
+        `).join('');
+      }
+
+      function openForm(type, price) {
+        const modal = new bootstrap.Modal(document.getElementById("ticketModal"));
+        document.querySelector('input[name="tx_ref"]').value = `${type}_${Date.now()}`;
+        document.querySelector('input[name="amount"]').value = price;
+        document.getElementById("baseAmount").value = price;
+        document.getElementById("ticketQuantity").value = 1;
+        modal.show();
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        createTicketCards();
+
+        const form = document.getElementById("flutterwaveForm");
+        form.addEventListener("submit", function (e) {
+          const qty = parseInt(document.getElementById("ticketQuantity").value);
+          const base = parseInt(document.getElementById("baseAmount").value);
+          const total = qty * base;
+          form.querySelector('input[name="amount"]').value = total;
+        });
+
+        LoadNavbarAndFooter();
+      });
+    </script>
+  </body>
+</html>
