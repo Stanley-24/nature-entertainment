@@ -31,13 +31,13 @@ function LoadNavbarAndFooter() {
           <!-- Nav links -->
           <ul class="navbar-nav d-flex flex-column flex-lg-row align-items-start align-items-lg-center gap-3">
             <li class="nav-item ">
-              <a class="nav-link text-purple-black" href="#">Contact us <i class="fas fa-phone"  style="font-size:1.3rem; margin-right: 3px; color: #FF4EDB;"></i></a>
+              <a class="nav-link text-purple-black" href="contact-aboutus.html#contact-us">Contact us <i class="fas fa-phone"  style="font-size:1.3rem; margin-right: 3px; color: #FF4EDB;"></i></a>
             </li>
             <li class="nav-item">
               <a class="nav-link text-purple-black" href="./ticket_page.html">Tickets <i class="fas fa-receipt"  style="font-size:1.3rem; margin-right: 5px; color: #FF4EDB;"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-purple-black" href="#">About us <i class="fas fa-info-circle"  style="font-size:1.3rem; margin-right: 3px; color: #FF4EDB;"></i> </a>
+              <a class="nav-link text-purple-black" href="contact-aboutus.html#about-us">About us <i class="fas fa-info-circle"  style="font-size:1.3rem; margin-right: 3px; color: #FF4EDB;"></i> </a>
             </li>
           </ul>
       

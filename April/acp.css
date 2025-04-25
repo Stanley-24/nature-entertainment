@@ -1,0 +1,29 @@
+html{
+     scroll-behavior: smooth;
+     scroll-padding-top: 80px;
+}
+body {
+     font-family: 'Raleway' !important;
+    
+}
+main{
+     margin: 5.5rem;
+}
+#about-us{
+     padding-top: 4rem;
+}
+#about-us h2{
+     font-size: 2.5rem;
+     color:#FF4EDB ;
+     font-weight: bold;
+}
+#about-us p{
+     font-weight: bold;
+}
+#contact-us{
+     color:#FF4EDB 
+}
+#contact-us p{
+     font-size: 1.5rem;
+     font-weight: bold;
+}

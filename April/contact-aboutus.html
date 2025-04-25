@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NatureEntertainment</title>
+    <link rel="icon" href="assets/Icon_color_512X512.png" type="image/png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="acp.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="index.css" />
+    <!-- Font Awesome & Bootstrap Icons -->
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <div id="navbar"></div>
+    <main>
+      <!-- ABOUT US SECTION -->
+      <section id="about-us" class="py-5  text-center">
+        <div class="container">
+          <h2 class="mb-4 fw-bold">ABOUT US</h2>
+          <div class="row justify-content-center align-items-center">
+            <div class="col-md-6 mb-4">
+              <img src="assets\NE-logo2.png" alt="About Us Image" class="img-fluid rounded shadow" />
+            </div>
+            <div class="col-md-8">
+              <p >
+                NATURE ENTERTAINMENT IS A CREATIVE ENTERTAINMENT COMMUNITY ROOTED IN THE VIBRANT SOUNDS OF HOUSE, DEEP HOUSE, AND AFRO-TECH.
+              </p>
+              <p>
+                BASED IN ABUJA, WE'RE MORE THAN JUST A RAVE COLLECTIVE — WE'RE CULTIVATING A MOVEMENT. OUR MISSION IS TO BUILD AND NURTURE A DYNAMIC COMMUNITY THAT TRULY LIVES AND BREATHES THIS GENRE OF MUSIC.
+              </p>
+              <p>
+                FROM CURATING UNFORGETTABLE RAVES TO CREATING SPACE FOR CONVERSATION AROUND THE AFRO HOUSE SOUND, WE'RE HERE TO AMPLIFY THE CULTURE.
+              </p>
+              <p>
+                WE SHINE A LIGHT ON THE PIONEERS SHAPING THE SOUND GLOBALLY WHILE SPOTLIGHTING EMERGING VOICES FROM THE CONTINENT.
+              </p>
+              <p>
+                WHETHER YOU'RE A SEASONED RAVER OR A CURIOUS NEWCOMER, NATURE ENTERTAINMENT INVITES YOU TO STEP INTO A WORLD WHERE RHYTHM MEETS SOUL — AND THE BEAT NEVER STOPS.
+              </p>
+              <h5 class="fw-semibold mt-4">GET YOUR DANCE SHOES READY. OUR ANNUAL RAVE IS ONLY THE BEGINNING.</h5>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+      <!-- CONTACT US SECTION -->
+      <section id="contact-us" class="py-5">
+        <div class="container">
+          <div class="text-center mb-5" data-aos="fade-down">
+            <h2 class="fw-bold">Contact Us</h2>
+            <p class="text-muted">
+              We’d love to hear from you. Reach out using the form below.
+            </p>
+          </div>
+          <div class="row justify-content-center" data-aos="zoom-in">
+            <div class="col-md-8">
+              <form id="contact-form">
+                <div class="mb-3">
+                  <label for="name" class="form-label">Full Name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    class="form-control"
+                    placeholder="Enter your full name"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">Email Address</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    class="form-control"
+                    placeholder="example@mail.com"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="message" class="form-label">Your Message</label>
+                  <textarea
+                    id="message"
+                    name="message"
+                    rows="5"
+                    class="form-control"
+                    placeholder="Type your message here..."
+                    required
+                  ></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary w-100">
+                  Send Message
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <div id="footer"></div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script>
+      LoadNavbarAndFooter();
+    </script>
+  </body>
+</html>
