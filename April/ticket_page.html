@@ -110,27 +110,27 @@
     <!-- Your Script -->
     <script src="script.js"></script>
     <script>
-      const ticketData = [
-  {
-    type: "EARLY_BIRD",  // Use the same format as the backend expects
-    name: "Early Bird",
-    price: 10000,
-    desc: "Discounted access for early supporters."
-  },
-  {
-    type: "REGULAR",  // Changed to match the backend
-    name: "Regular Ticket",
-    price: 15000,
-    desc: "Access to all general areas of the event."
-  },
-  {
-    type: "STAGE_ACCESS",  // Changed to match the backend
-    name: "Stage Access",
-    price: 25000,
-    desc: "Includes regular access + stage area + VIP Lounge."
-  },
-];
-
+    const ticketData = [
+      {
+        type: "Early_Bird",  // Updated to match the backend's expected format
+        name: "Early Bird",
+        price: 10000,
+        desc: "Discounted access for early supporters."
+      },
+      {
+        type: "Regular",  // Updated to match the backend's expected format
+        name: "Regular Ticket",
+        price: 15000,
+        desc: "Access to all general areas of the event."
+      },
+      {
+        type: "Stage_Access",  // Updated to match the backend's expected format
+        name: "Stage Access",
+        price: 25000,
+        desc: "Includes regular access + stage area + VIP Lounge."
+      },
+    ];
+    
 function createTicketCards() {
   const container = document.getElementById("ticket-section");
   container.innerHTML = ticketData.map(ticket => `
