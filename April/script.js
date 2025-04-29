@@ -58,7 +58,7 @@ function LoadNavbarAndFooter() {
     
           <!-- Left Column: Logo -->
           <div class="col-md-4 mb-3 mb-md-0 d-flex justify-content-center justify-content-md-start">
-            <img src="assets/NE-logo2.png" alt="Nature Entertainment Logo">
+            <a href="https://www.wearenatureent.com/"><img src="assets/NE-logo2.png" alt="Nature Entertainment Logo"></a>
           </div>
     
           <!-- Right Column: Flex with 3 items -->
