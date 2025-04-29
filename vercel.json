@@ -11,5 +11,29 @@
       "src": "/(.*)",
       "dest": "April/$1"
     }
+  ],
+  "redirects": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "host",
+          "value": "wearenatureent.com"
+        }
+      ],
+      "destination": "https://www.wearenatureent.com/",
+      "permanent": true
+    },
+    {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "wearenatureent.com"
+        }
+      ],
+      "destination": "https://www.wearenatureent.com/:path*",
+      "permanent": true
+    }
   ]
 }
