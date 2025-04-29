@@ -37,7 +37,7 @@ function LoadNavbarAndFooter() {
               <a class="nav-link text-purple-black" href="./ticket_page.html">Tickets <i class="fas fa-receipt"  style="font-size:1.3rem; margin-right: 5px; color: #FF4EDB;"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-purple-black" href="contact-aboutus.html#about-us">About us <i class="fas fa-info-circle"  style="font-size:1.3rem; margin-right: 3px; color: #FF4EDB;"></i> </a>
+              <a class="nav-link text-purple-black" href="contact-aboutus.html #about-us">About us <i class="fas fa-info-circle"  style="font-size:1.3rem; margin-right: 3px; color: #FF4EDB;"></i> </a>
             </li>
           </ul>
       
@@ -151,48 +151,99 @@ function LoadNavbarAndFooter() {
    })();
 
    // Select all images
-const images = document.querySelectorAll('.previos-img');
-const modal = document.getElementById('lightbox-modal');
-const modalImg = document.getElementById('lightbox-image');
-const closeBtn = document.querySelector('.close-lightbox');
-const prevBtn = document.getElementById('prev-btn');
-const nextBtn = document.getElementById('next-btn');
- let currentIndex = 0;
-// Add click event to each image
- function showImage(index) {
-  modalImg.src = images[index].src;
-  modalImg.classList.add('zoom-in'); // Add animation
- }
-images.forEach((img, index) => {
-  img.addEventListener('click', () => {
-    currentIndex = index; // Update current index
-    modal.style.display = 'flex';
-    showImage(currentIndex); // Show the clicked image
-  });
-});
+   const images = document.querySelectorAll('.previos-img');
+   const modal = document.getElementById('lightbox-modal');
+   const modalImg = document.getElementById('lightbox-image');
+   const closeBtn = document.querySelector('.close-lightbox'); // Correct class
+   const prevBtn = document.getElementById('prev-btn');
+   const nextBtn = document.getElementById('next-btn');
+   let currentIndex = 0;
+   
+   function showImage(index) {
+     modalImg.src = images[index].src;
+     modalImg.classList.add('zoom-in');
+   }
+   
+   if (images && modal && modalImg) {
+     images.forEach((img, index) => {
+       img.addEventListener('click', () => {
+         currentIndex = index;
+         modal.style.display = 'flex';
+         showImage(currentIndex);
+       });
+     });
+   
+     if (closeBtn) {
+       closeBtn.addEventListener('click', () => {
+         modal.style.display = 'none';
+         modalImg.classList.remove('zoom-in');
+       });
+     }
+   
+     if (prevBtn) {
+       prevBtn.addEventListener('click', (e) => {
+         e.preventDefault();
+         currentIndex = (currentIndex - 1 + images.length) % images.length;
+         showImage(currentIndex);
+       });
+     }
+   
+     if (nextBtn) {
+       nextBtn.addEventListener('click', (e) => {
+         e.preventDefault();
+         currentIndex = (currentIndex + 1) % images.length;
+         showImage(currentIndex);
+       });
+     }
+   
+     modal.addEventListener('click', (e) => {
+       if (e.target === modal) {
+         modal.style.display = 'none';
+         modalImg.classList.remove('zoom-in');
+       }
+     });
+   }
+   
+const form = document.getElementById('contact-form');  // Add this line FIRST!
 
-// Close the modal when clicking the close button
-closeBtn.addEventListener('click', () => {
-  modal.style.display = 'none';
-  modalImg.classList.remove('zoom-in');
-});
- prevBtn.addEventListener('click', (e) => { 
+form.addEventListener('submit', async (e) => {
   e.preventDefault();
-  currentIndex = (currentIndex -1 + images.length) % images.length;
-  showImage(currentIndex);
- });
- nextBtn.addEventListener('click', (e) => {
-  e.preventDefault();
-  currentIndex = (currentIndex  +1) % images.length;
-  showImage(currentIndex);
- })
-// Optional: Close modal if user clicks outside the image
-modal.addEventListener('click', (e) => {
-  if (e.target === modal) {
-    modal.style.display = 'none';
-    modalImg.classList.remove('zoom-in');
+
+  const formData = {
+    name: form.name.value.trim(),
+    email: form.email.value.trim(),
+    message: form.message.value.trim(),
+  };
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(formData.email)) {
+    alert('Please enter a valid email address.')
+  }
+  console.log('Form submitted:', formData);
+
+  try {
+    const response = await fetch('http://127.0.0.1:5000/send-email', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    });
+
+    const result = await response.json();
+
+    if (response.ok) {
+      alert('Message sent successfully!');
+      form.reset();
+    } else {
+      alert('Error sending message. Please try again later.');
+    }
+  } catch (error) {
+    console.error('Error:', error);
+    alert('Error sending message.');
   }
 });
+
+
 
 
 
