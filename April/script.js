@@ -59,7 +59,7 @@ function LoadNavbarAndFooter() {
     
           <!-- Left Column: Logo -->
           <div class="col-md-4 mb-3 mb-md-0 d-flex justify-content-center justify-content-md-start">
-            <img src="assets/NE-logo2.png" alt="Nature Entertainment Logo">
+            <a href="https://www.wearenatureent.com/"><img src="assets/NE-logo2.png" alt="Nature Entertainment Logo"></a>
           </div>
     
           <!-- Right Column: Flex with 3 items -->
@@ -68,8 +68,8 @@ function LoadNavbarAndFooter() {
     
               <!-- Policies -->
               <div>
-                <a href="#" class="d-block">Privacy Policy</a>
-                <a href="#" class="d-block">Terms of Service</a>
+                <a href="https://www.privacypolicies.com/live/a1d68a3c-71c3-4db8-8171-9cbddcc9ed34" class="d-block">Privacy Policy</a>
+                <a href="./terms_of_service.html" class="d-block">Terms of Service</a>
                 <p class="mb-1 copy1">&copy; 2025 Nature Entertainment. All rights reserved.</p>
 
               </div>
