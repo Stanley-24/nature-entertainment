@@ -228,7 +228,7 @@ form.addEventListener('submit', async (e) => {
   console.log('Form submitted:', formData);
 
   try {
-    const response = await fetch('http://127.0.0.1:5000/send-email', {
+    const response = await fetch('https://natureentertainment-be.onrender.com/send-email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -257,7 +257,7 @@ if (subscriberForm) {
     e.preventDefault();
     const email = subscriberForm.querySelector('input[type="email"]').value.trim();
     try {
-      const response = await fetch('http://127.0.0.1:5000/subscribe', {
+      const response = await fetch('https://natureentertainment-be.onrender.com/subscribe', {
         method: 'POST',
         headers: {
           'content-Type': 'application/x-www-form-urlencoded'
