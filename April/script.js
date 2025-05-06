@@ -37,7 +37,8 @@ function LoadNavbarAndFooter() {
               <a class="nav-link text-purple-black" href="./ticket_page.html">Tickets <i class="fas fa-receipt"  style="font-size:1.3rem; margin-right: 5px; color: #FF4EDB;"></i></a>
             </li>
             <li class="nav-item">
-              <a class="nav-link text-purple-black" href="contact-aboutus.html #about-us">About us <i class="fas fa-info-circle"  style="font-size:1.3rem; margin-right: 3px; color: #FF4EDB;"></i> </a>
+              <a class="nav-link text-purple-black" href="contact-aboutus.html#about-us">
+                About us <i class="fas fa-info-circle"  style="font-size:1.3rem; margin-right: 3px; color: #FF4EDB;"></i> </a>
             </li>
           </ul>
       
@@ -204,7 +205,12 @@ function LoadNavbarAndFooter() {
      });
    }
    
-const form = document.getElementById('contact-form');  // Add this line FIRST!
+document.addEventListener('DOMContentLoaded',() => {
+  const form = document.getElementById('contact-form');  
+  if(!form) {
+    console.error('Form not found!');
+    return;
+  }
 
 form.addEventListener('submit', async (e) => {
   e.preventDefault();
@@ -214,6 +220,7 @@ form.addEventListener('submit', async (e) => {
     email: form.email.value.trim(),
     message: form.message.value.trim(),
   };
+
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   if (!emailRegex.test(formData.email)) {
     alert('Please enter a valid email address.')
@@ -221,7 +228,7 @@ form.addEventListener('submit', async (e) => {
   console.log('Form submitted:', formData);
 
   try {
-    const response = await fetch('http://127.0.0.1:5000/send-email', {
+    const response = await fetch('https://natureentertainment-be.onrender.com/send-email', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -242,6 +249,31 @@ form.addEventListener('submit', async (e) => {
     alert('Error sending message.');
   }
 });
+})
+
+const subscriberForm = document.getElementById('subscriberForm');
+if (subscriberForm) {
+  subscriberForm.addEventListener('submit', async(e) => {
+    e.preventDefault();
+    const email = subscriberForm.querySelector('input[type="email"]').value.trim();
+    try {
+      const response = await fetch('https://natureentertainment-be.onrender.com/subscribe', {
+        method: 'POST',
+        headers: {
+          'content-Type': 'application/x-www-form-urlencoded'
+        },
+        body: new URLSearchParams({ 'email': email })
+      });
+      const message = await response.text();
+      alert(message);
+      subscriberForm.reset();
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Error subscribing. Please try again later.');
+    }
+  });
+}
+
 
 
 
