@@ -322,6 +322,10 @@ blockquote{
   padding-bottom: 56px !important;
 }
 
+.promo-section ul li, p {
+  font-size: 1.2rem;
+}
+
 #tickets-btn-sec {
   display: block;
   font-size: 1.2rem;
@@ -369,9 +373,9 @@ footer img {
 }
 
 @media (max-width: 768px) {
-  .promo-section ul l1{
+  .promo-section ul li{
     font-size: 0.9rem !important;
-    padding: 20px 0 !important;
+    padding: 9px  !important;
     
   }
   .promo-section {
