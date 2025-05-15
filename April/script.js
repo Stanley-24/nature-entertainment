@@ -79,7 +79,7 @@ function LoadNavbarAndFooter() {
                 <p class="mb-1 fw-bold">Contact Us</p>
                 <div>
                   <a href="mailto:info@natureentertainment.com">info@natureentertainment.com</a>
-                  <p>📞 09025731723</p>
+                  <p>📞 +2349025731723</p>
                 </div>
               </div>
     
