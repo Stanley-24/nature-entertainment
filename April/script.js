@@ -68,7 +68,7 @@ function LoadNavbarAndFooter() {
     
               <!-- Policies -->
               <div>
-                <a href="https://www.privacypolicies.com/live/a1d68a3c-71c3-4db8-8171-9cbddcc9ed34" class="d-block">Privacy Policy</a>
+                <a href="https://www.privacypolicies.com/live/59873ee3-792a-4cb3-8194-3b619f85a6c1" class="d-block">Privacy Policy</a>
                 <a href="./terms_of_service.html" class="d-block">Terms of Service</a>
                 <p class="mb-1 copy1">&copy; 2025 Nature Entertainment. All rights reserved.</p>
 
@@ -77,7 +77,10 @@ function LoadNavbarAndFooter() {
               <!-- Contact -->
               <div>
                 <p class="mb-1 fw-bold">Contact Us</p>
-                <a href="mailto:info@natureentertainment.com">info@natureentertainment.com</a>
+                <div>
+                  <a href="mailto:info@natureentertainment.com">info@natureentertainment.com</a>
+                  <p>📞 09025731723</p>
+                </div>
               </div>
     
               <!-- Social Media -->

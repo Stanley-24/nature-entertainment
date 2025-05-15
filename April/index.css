@@ -1,8 +1,7 @@
 @font-face {
-  font-family: 'Pricedown' ;
+  font-family: 'Futura' ;
   font-style: normal;
-  src: url(../April/assets/Pricedown-Black.woff2) format('woff2'),
-        url(../April/assets/Pricedown-Black.woff) format('woff');
+  src: url(../April/assets/font/Futura-Font/Futura\ Cyrillic\ Bold.ttf) format('ttf')
 }
 
 body {
@@ -303,6 +302,12 @@ blockquote{
   border-radius: 8px;
   object-fit: cover;
   max-height: 420px;
+}
+
+
+.logo h5{
+  font-family: "Futura";
+  padding-left: 0 !important;
 }
 
 /* Only on large screens: allow taller height */
