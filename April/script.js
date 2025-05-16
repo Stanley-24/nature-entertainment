@@ -70,7 +70,7 @@ function LoadNavbarAndFooter() {
               <div>
                 <a href="https://www.privacypolicies.com/live/59873ee3-792a-4cb3-8194-3b619f85a6c1" class="d-block">Privacy Policy</a>
                 <a href="./terms_of_service.html" class="d-block">Terms of Service</a>
-                <p class="mb-1 copy1">&copy; 2025 Nature Entertainment. All rights reserved.</p>
+                <p class="mb-1 copy1">&copy; 2025 IE Nature Entertainment. All rights reserved.</p>
 
               </div>
     
@@ -78,7 +78,7 @@ function LoadNavbarAndFooter() {
               <div>
                 <p class="mb-1 fw-bold">Contact Us</p>
                 <div>
-                  <a href="mailto:info@natureentertainment.com">info@natureentertainment.com</a>
+                  <a href="mailto:info@natureentertainment.com">info@wearenatureent.com</a>
                   <p>📞 +2349025731723</p>
                 </div>
               </div>
@@ -86,11 +86,11 @@ function LoadNavbarAndFooter() {
               <!-- Social Media -->
               <div>
                 <p class="mb-1 fw-bold">FollowUs</p>
-                <a href="https://www.instagram.com/yourbrand" target="_blank" class="social-icon">
+                <a href="https://www.instagram.com/natureentertainment_/" target="_blank" class="social-icon">
                   <i class="bi bi-instagram"></i>
                 </a>
               </div>
-              <p class="mb-1 copy2">&copy; 2025 Nature Entertainment.<br> All rights reserved. </p>
+              <p class="mb-1 copy2">&copy; 2025 IE Nature Entertainment.<br> All rights reserved. </p>
 
             </div>
           </div>
