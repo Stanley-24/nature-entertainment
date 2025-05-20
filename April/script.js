@@ -80,6 +80,7 @@ function LoadNavbarAndFooter() {
                 <div>
                   <a href="mailto:info@natureentertainment.com">info@wearenatureent.com</a>
                   <p>📞 +2349025731723</p>
+                  <p class="footer_txt">📍 Ship2 Plt 743, A/Kano Cresent, Wuse 2. Abuja</p>
                 </div>
               </div>
     

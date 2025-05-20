@@ -345,16 +345,17 @@ blockquote{
 footer {
   background-color: #FF4EDB;
   color: #fff;
-   font-weight: bold;
+   font-weight: normal;
   padding-top: 2.2rem;
   padding-bottom: 2rem;
   border-top-left-radius: 2rem;
   border-top-right-radius: 2rem;
+  font-size: 19px !important;
 }
 
 footer p,
 footer a {
-  font-size: 1.2rem;
+  
   color:black;
   transition: all 0.3s ease;
   text-decoration: none;
@@ -375,6 +376,10 @@ footer a:hover {
 footer img {
   max-width: 160px;
   border-radius: 1rem;
+}
+
+.footer_txt {
+  font-size: 18px;
 }
 
 @media (max-width: 768px) {
