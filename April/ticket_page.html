@@ -181,6 +181,13 @@
           return;
         }
 
+
+        console.log("Customer Name:", name);
+        console.log("Customer Email:", email);
+        console.log("Quantity:", quantity);
+        console.log("Selected Ticket Type:", selectedTicketType);
+        console.log("Selected Ticket Price:", selectedTicketPrice);
+
         const amount = selectedTicketPrice * quantity;
         const tx_ref = `${selectedTicketType}_${Date.now()}`;
 
