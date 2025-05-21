@@ -61,6 +61,8 @@
                 <input type="hidden" name="currency" value="NGN" />
                 <input type="hidden" name="payment_options" value="card, banktransfer" />
                 <input type="hidden" name="meta[ticket_type]" id="ticketTypeMeta" />
+                <input type="hidden" name="meta[name]" id="metaName" />
+                <input type="hidden" name="meta[email]" id="metaEmail" />
                 <input type="hidden" name="redirect_url" value="https://succes-page.vercel.app/" />
 
 
@@ -110,70 +112,79 @@
     <!-- Your Script -->
     <script src="script.js"></script>
     <script>
-    const ticketData = [
+      const ticketData = [
       {
-        type: "early_bird",  // Updated to match the backend's expected format
+        type: "early_bird",
         name: "Early Bird",
         price: 10000,
         desc: "Discounted access for early supporters."
       },
       {
-        type: "regular",  // Updated to match the backend's expected format
+        type: "regular",
         name: "Regular Ticket",
         price: 15000,
         desc: "Access to all general areas of the event."
       },
       {
-        type: "stage_access",  // Updated to match the backend's expected format
+        type: "stage_access",
         name: "Stage Access",
         price: 25000,
         desc: "Includes regular access + stage area + VIP Lounge."
       },
     ];
     
-function createTicketCards() {
-  const container = document.getElementById("ticket-section");
-  container.innerHTML = ticketData.map(ticket => `
-    <div class="col-md-4 mb-4">
-      <div class="card shadow rounded-4 p-4 h-100 d-flex flex-column justify-content-between">
-        <div>
-          <h3 class="text-center mb-3">${ticket.name}</h3>
-          <p class="text-center">${ticket.desc}</p>
-          <h4 class="text-center">₦${ticket.price.toLocaleString()}</h4>
+    function createTicketCards() {
+      const container = document.getElementById("ticket-section");
+      container.innerHTML = ticketData.map(ticket => `
+        <div class="col-md-4 mb-4">
+          <div class="card shadow rounded-4 p-4 h-100 d-flex flex-column justify-content-between">
+            <div>
+              <h3 class="text-center mb-3">${ticket.name}</h3>
+              <p class="text-center">${ticket.desc}</p>
+              <h4 class="text-center">₦${ticket.price.toLocaleString()}</h4>
+            </div>
+            <div class="text-center mt-3">
+              <button class="btn btn-primary rounded-pill px-4" onclick="openForm('${ticket.type}', ${ticket.price})">Buy Ticket</button>
+            </div>
+          </div>
         </div>
-        <div class="text-center mt-3">
-          <button class="btn btn-primary rounded-pill px-4" onclick="openForm('${ticket.type}', ${ticket.price})">Buy Ticket</button>
-        </div>
-      </div>
-    </div>
-  `).join('');
-}
-
-function openForm(type, price) {
-  const modal = new bootstrap.Modal(document.getElementById("ticketModal"));
-  document.querySelector('input[name="tx_ref"]').value = `${type}_${Date.now()}`;
-  document.querySelector('input[name="amount"]').value = price;
-  document.getElementById("baseAmount").value = price;
-  document.getElementById("ticketQuantity").value = 1;
-  document.getElementById("ticketTypeMeta").value = type;
-
-  modal.show();
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-  createTicketCards();
-
-  const form = document.getElementById("flutterwaveForm");
-  form.addEventListener("submit", function (e) {
-    const qty = parseInt(document.getElementById("ticketQuantity").value);
-    const base = parseInt(document.getElementById("baseAmount").value);
-    const total = qty * base;
-    form.querySelector('input[name="amount"]').value = total;
-  });
-
-  LoadNavbarAndFooter();
-});
-
+      `).join('');
+    }
+    
+    function openForm(type, price) {
+      const modal = new bootstrap.Modal(document.getElementById("ticketModal"));
+      document.querySelector('input[name="tx_ref"]').value = `${type}_${Date.now()}`;
+      document.querySelector('input[name="amount"]').value = price;
+      document.getElementById("baseAmount").value = price;
+      document.getElementById("ticketQuantity").value = 1;
+      document.getElementById("ticketTypeMeta").value = type;
+    
+      modal.show();
+    }
+    
+    document.addEventListener("DOMContentLoaded", () => {
+      createTicketCards();
+    
+      const form = document.getElementById("flutterwaveForm");
+    
+      form.addEventListener("submit", function (e) {
+        const qty = parseInt(document.getElementById("ticketQuantity").value);
+        const base = parseInt(document.getElementById("baseAmount").value);
+        const total = qty * base;
+    
+        // Update the amount with the correct total
+        form.querySelector('input[name="amount"]').value = total;
+    
+        // Capture user-entered name and email to meta fields
+        const customerName = form.querySelector('input[name="customer[name]"]').value;
+        const customerEmail = form.querySelector('input[name="customer[email]"]').value;
+        document.getElementById("metaName").value = customerName;
+        document.getElementById("metaEmail").value = customerEmail;
+      });
+    
+      LoadNavbarAndFooter();
+    });
+    
     </script>
   </body>
 </html>
