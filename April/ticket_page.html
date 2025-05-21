@@ -198,12 +198,14 @@
           meta: {
             ticket_type: selectedTicketType,
             quantity: quantity,
+            email: email,
+            name: name,
           },
           redirect_url: `https://succes-page.vercel.app/?tx_ref=${encodeURIComponent(tx_ref)}&email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}`,
           customizations: {
-            title: "NatureEntertainment Tickets",
+            title: "Nature Entertainment",
             description: `Purchase of ${quantity} x ${selectedTicketType} ticket(s)`,
-            logo: "https://yourdomain.com/assets/Icon_color_512X512.png",
+            logo: "./assets/Icon_color_512X512.png",
           },
           onclose: function () {
             // Optional: actions on modal close without payment
