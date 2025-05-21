@@ -50,36 +50,31 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
             </div>
             <div class="modal-body">
-              <form
-                id="flutterwaveForm"
-                action="https://checkout.flutterwave.com/v3/hosted/pay"
-                method="POST"
-              >
-                <input type="hidden" name="public_key" value="FLWPUBK_TEST-e8837220d95dd27710f9ee75b7e24f42-X" />
-                <input type="hidden" name="tx_ref" />
-                <input type="hidden" name="amount" />
-                <input type="hidden" name="currency" value="NGN" />
-                <input type="hidden" name="payment_options" value="card, banktransfer" />
-                <input type="hidden" name="redirect_url" value="https://succes-page.vercel.app/" />
-
-                <!-- Meta fields for backend -->
-                <input type="hidden" name="meta[ticket_type]" id="ticketTypeMeta" />
-                <input type="hidden" name="meta[name]" id="metaName" />
-                <input type="hidden" name="meta[email]" id="metaEmail" />
-
+              <form id="paymentForm">
                 <div class="mb-3">
                   <label class="form-label">Name</label>
-                  <input type="text" name="customer[name]" id="customerName" class="form-control" required />
+                  <input
+                    type="text"
+                    id="customerName"
+                    class="form-control"
+                    required
+                    placeholder="Enter your full name"
+                  />
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Email</label>
-                  <input type="email" name="customer[email]" id="customerEmail" class="form-control" required />
+                  <input
+                    type="email"
+                    id="customerEmail"
+                    class="form-control"
+                    required
+                    placeholder="Enter your email"
+                  />
                 </div>
                 <div class="mb-3">
                   <label class="form-label">Quantity</label>
                   <input
                     type="number"
-                    name="quantity"
                     id="ticketQuantity"
                     min="1"
                     value="1"
@@ -88,10 +83,10 @@
                   />
                 </div>
 
-                <input type="hidden" id="baseAmount" />
-
                 <div class="text-end">
-                  <button type="submit" class="btn btn-primary rounded-pill">Pay Now</button>
+                  <button type="submit" class="btn btn-primary rounded-pill">
+                    Pay Now
+                  </button>
                 </div>
               </form>
             </div>
@@ -109,7 +104,9 @@
       crossorigin="anonymous"
     ></script>
 
-    <script src="script.js"></script>
+    <!-- Flutterwave SDK -->
+    <script src="https://checkout.flutterwave.com/v3.js"></script>
+
     <script>
       const ticketData = [
         {
@@ -132,9 +129,14 @@
         },
       ];
 
+      let selectedTicketType = null;
+      let selectedTicketPrice = 0;
+
       function createTicketCards() {
         const container = document.getElementById("ticket-section");
-        container.innerHTML = ticketData.map(ticket => `
+        container.innerHTML = ticketData
+          .map(
+            (ticket) => `
           <div class="col-md-4 mb-4">
             <div class="card shadow rounded-4 p-4 h-100 d-flex flex-column justify-content-between">
               <div>
@@ -147,40 +149,85 @@
               </div>
             </div>
           </div>
-        `).join('');
+        `
+          )
+          .join("");
       }
 
       function openForm(type, price) {
-        const modal = new bootstrap.Modal(document.getElementById("ticketModal"));
-        document.querySelector('input[name="tx_ref"]').value = `${type}_${Date.now()}`;
-        document.querySelector('input[name="amount"]').value = price;
-        document.getElementById("baseAmount").value = price;
+        selectedTicketType = type;
+        selectedTicketPrice = price;
+
+        const modal = new bootstrap.Modal(
+          document.getElementById("ticketModal")
+        );
+        // Reset form
+        document.getElementById("paymentForm").reset();
         document.getElementById("ticketQuantity").value = 1;
-        document.getElementById("ticketTypeMeta").value = type;
 
         modal.show();
+      }
+
+      function payWithFlutterwave() {
+        const name = document.getElementById("customerName").value.trim();
+        const email = document.getElementById("customerEmail").value.trim();
+        const quantity = parseInt(
+          document.getElementById("ticketQuantity").value.trim()
+        );
+
+        if (!name || !email || quantity < 1) {
+          alert("Please fill in all fields correctly.");
+          return;
+        }
+
+        const amount = selectedTicketPrice * quantity;
+        const tx_ref = `${selectedTicketType}_${Date.now()}`;
+
+        FlutterwaveCheckout({
+          public_key:
+            "FLWPUBK_TEST-e8837220d95dd27710f9ee75b7e24f42-X",
+          tx_ref: tx_ref,
+          amount: amount,
+          currency: "NGN",
+          payment_options: "card, banktransfer",
+          customer: {
+            name: name,
+            email: email,
+          },
+          meta: {
+            ticket_type: selectedTicketType,
+            quantity: quantity,
+          },
+          redirect_url: `https://succes-page.vercel.app/?tx_ref=${encodeURIComponent(tx_ref)}&email=${encodeURIComponent(email)}&name=${encodeURIComponent(name)}`,
+          customizations: {
+            title: "NatureEntertainment Tickets",
+            description: `Purchase of ${quantity} x ${selectedTicketType} ticket(s)`,
+            logo: "https://yourdomain.com/assets/Icon_color_512X512.png",
+          },
+          onclose: function () {
+            // Optional: actions on modal close without payment
+          },
+          callback: function (data) {
+            // Optional: handle callback (if needed)
+            // Flutterwave auto-redirects to redirect_url after payment
+          },
+        });
       }
 
       document.addEventListener("DOMContentLoaded", () => {
         createTicketCards();
 
-        const form = document.getElementById("flutterwaveForm");
+        document
+          .getElementById("paymentForm")
+          .addEventListener("submit", function (e) {
+            e.preventDefault();
+            payWithFlutterwave();
+          });
 
-        form.addEventListener("submit", function () {
-          const qty = parseInt(document.getElementById("ticketQuantity").value);
-          const base = parseInt(document.getElementById("baseAmount").value);
-          const total = qty * base;
-
-          form.querySelector('input[name="amount"]').value = total;
-
-          // Sync customer info with meta
-          const customerName = document.getElementById("customerName").value;
-          const customerEmail = document.getElementById("customerEmail").value;
-          document.getElementById("metaName").value = customerName;
-          document.getElementById("metaEmail").value = customerEmail;
-        });
-
-        LoadNavbarAndFooter();
+        // Load navbar and footer if you have those functions
+        if (typeof LoadNavbarAndFooter === "function") {
+          LoadNavbarAndFooter();
+        }
       });
     </script>
   </body>
