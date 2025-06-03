@@ -14,7 +14,7 @@ body {
 }
 
 [data-bs-theme="dark"] body {
-  background-image: url('assets/dark_bg01.jpg');
+  background-image: url('assets/dark_bg02.jpg');
   background-size: fill;
   background-position: center center;
   background-repeat: repeat;
