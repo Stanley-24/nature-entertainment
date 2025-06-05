@@ -129,10 +129,10 @@ function LoadNavbarAndFooter() {
        if (!icon || !text) return;
        if (theme === 'dark') {
          icon.className = 'bi bi-moon-stars';
-         text.textContent = 'Dark Mode';
+         text.textContent = 'Light Mode';
        } else {
          icon.className = 'bi bi-sun-fill';
-         text.textContent = 'Light Mode';
+         text.textContent = 'Dark Mode';
        }
      };
    
