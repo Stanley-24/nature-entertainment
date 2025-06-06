@@ -158,7 +158,7 @@ function LoadNavbarAndFooter() {
    const images = document.querySelectorAll('.previos-img');
    const modal = document.getElementById('lightbox-modal');
    const modalImg = document.getElementById('lightbox-image');
-   const closeBtn = document.querySelector('.close-lightbox'); // Correct class
+   const closeBtn = document.querySelector('.closeBtn'); // Correct class
    const prevBtn = document.getElementById('prev-btn');
    const nextBtn = document.getElementById('next-btn');
    let currentIndex = 0;
