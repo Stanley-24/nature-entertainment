@@ -149,24 +149,31 @@
       function createTicketCards() {
         const container = document.getElementById("ticket-section");
         container.innerHTML = ticketData
-          .map(
-            (ticket) => `
-          <div class="col-md-4 mb-4">
-            <div class="card shadow rounded-4 p-4 h-100 d-flex flex-column justify-content-between">
-              <div>
-                <h3 class="text-center mb-3">${ticket.name}</h3>
-                <p class="text-center">${ticket.desc}</p>
-                <h4 class="text-center">₦${ticket.price.toLocaleString()}</h4>
+          .map((ticket) => {
+            const isSoldOut = ticket.type === "early_bird"; // mark 'regular' as sold out
+      
+            return `
+              <div class="col-md-4 mb-4">
+                <div class="card shadow rounded-4 p-4 h-100 d-flex flex-column justify-content-between">
+                  <div>
+                    <h3 class="text-center mb-3">${ticket.name}</h3>
+                    <p class="text-center">${ticket.desc}</p>
+                    <h4 class="text-center">₦${ticket.price.toLocaleString()}</h4>
+                  </div>
+                  <div class="text-center mt-3">
+                    ${
+                      isSoldOut
+                        ? `<button class="btn btn-secondary rounded-pill px-4" disabled>Sold Out</button>`
+                        : `<button class="btn btn-primary rounded-pill px-4" onclick="openForm('${ticket.type}', ${ticket.price})">Buy Ticket</button>`
+                    }
+                  </div>
+                </div>
               </div>
-              <div class="text-center mt-3">
-                <button class="btn btn-primary rounded-pill px-4" onclick="openForm('${ticket.type}', ${ticket.price})">Buy Ticket</button>
-              </div>
-            </div>
-          </div>
-        `
-          )
+            `;
+          })
           .join("");
       }
+      
 
       function openForm(type, price) {
         selectedTicketType = type;
